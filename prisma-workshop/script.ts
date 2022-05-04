@@ -2,9 +2,18 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-// A `main` function so that you can use async/await
 async function main() {
-  // ... you will write your Prisma Client queries here
+  const result = await prisma.post.update({
+    where: { id: 1 },
+    data: {
+      author: {
+        connect: {
+          email: "alice@prisma.io",
+        },
+      },
+    },
+  });
+  console.log(result);
 }
 
 main()
