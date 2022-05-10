@@ -7,7 +7,7 @@ async function main() {
     skip: 2,
     take: 2,
   });
-  console.log(result);
+  console.dir(result, { depth: null });
 }
 
 main()
